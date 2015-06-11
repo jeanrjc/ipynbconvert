@@ -16,6 +16,6 @@ find $IN_NOTEBOOK_DIR -type f  ! -name '*checkpoint*' -name "*.ipynb" -print0 | 
     name=${n##*\/}
 
     mkdir -p $OUT_NOTEBOOK_DIR/"$outdir"
-    ipython nbconvert --template $TEMPLATE_DIR/output\_toggle "$file" --output ~/Documents/MonPhD/Notebooks/"$outdir"/"${name%.*}";
+    ipython nbconvert --template $TEMPLATE_DIR/output\_toggle "$file" --output $OUT_NOTEBOOK_DIR/"$outdir"/"${name%.*}";
 done
-date >> ~/Documents/MonPhD/Notebooks/convert.log
+date >> $OUT_NOTEBOOK_DIR/convert.log
